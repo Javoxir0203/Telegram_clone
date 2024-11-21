@@ -9,10 +9,10 @@ const config: Config = {
 				center: true,
 				padding: '1rem',
 				screens: {
-					 sm:'100%',
-					 md:'100%',
-					 lg:'1200px',
-					 xl:'1280px',
+					sm: '100%',
+					md: '100%',
+					lg: '1200px',
+					xl: '1280px',
 				},
 			},
 			colors: {
@@ -64,6 +64,15 @@ const config: Config = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
+			},
+			keyframes: {
+				'caret-blink': {
+					'0%,70%,100%': { opacity: '1' },
+					'20%,50%': { opacity: '0' },
+				},
+			},
+			animation: {
+				'caret-blink': 'caret-blink 1.25s ease-out infinite',
 			},
 		},
 	},

@@ -1,4 +1,6 @@
 import { FaTelegram } from 'react-icons/fa'
+import StateAuth from './_component/state'
+import Social from './_component/social'
 const page = () => {
 	return (
 		<div className='container max-w-md w-full h-screen flex justify-center items-center flex-col space-y-4'>
@@ -6,7 +8,9 @@ const page = () => {
 			<div>
 				<h1 className='text-4xl font-bold'>Telegram</h1>
 			</div>
-			<p className='text-center text-muted-foreground text-sm'>Telegram is messaging app with a focus on speed and security,it`s super-fast,simple and fee</p>
+			
+			<StateAuth/>
+			<Social/>
 		</div>
 	)
 }
