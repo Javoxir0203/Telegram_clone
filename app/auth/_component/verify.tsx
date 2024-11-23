@@ -3,6 +3,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Input } from '@/components/ui/input'
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/components/ui/input-otp'
 import { Label } from '@/components/ui/label'
+import { useAuth } from '@/hooks/use-auth'
 import { otpSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { REGEXP_ONLY_DIGITS } from 'input-otp'
@@ -11,12 +12,15 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 const Verify = () => {
+	const {email} = useAuth()
 	const form = useForm<z.infer<typeof otpSchema>>({
 		resolver: zodResolver(otpSchema),
-		defaultValues: { email: '', otp: '' },
+		defaultValues: { email, otp: '' },
 	})
 	function onSubmit(values: z.infer<typeof otpSchema>) {
-		console.log(values)
+	// API call to verify otp
+	console.log(values)
+	window.open('/','_self')
 	}
 	return (
 		<div className='w-full'>
@@ -28,9 +32,9 @@ const Verify = () => {
 						name='email'
 						render={({ field }) => (
 							<FormItem>
-								<Label>Username</Label>
+								<Label>Email</Label>
 								<FormControl>
-									<Input placeholder='javoxireshquvvatovv@gmail.com' className='h-10 bg-secondary' {...field} />
+									<Input placeholder='javoxireshquvvatovv@gmail.com' disabled className='h-10 bg-secondary' {...field} />
 								</FormControl>
 								<FormMessage className='text-xs text-red-500' />
 							</FormItem>
