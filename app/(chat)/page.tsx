@@ -11,6 +11,7 @@ import { z } from 'zod'
 import { emailSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import TopChat from './_components/top-chat'
+import Chat from './_components/chat'
 
 const Home = () => {
 	const { currentContact } = useCurrentContact()
@@ -50,6 +51,7 @@ const Home = () => {
 					{/* Top chat */}
 					<TopChat/>
 					{/* chat message */}
+					<Chat/>
 					</div>}
 			</div>
 		</>
