@@ -1,5 +1,23 @@
+import MessageLoading from './message.loading'
+
 const ChatLoading = () => {
-	return <div>ChatLoading</div>
+	return (
+		<>
+			<MessageLoading isReceived />
+			<MessageLoading isReceived />
+			<MessageLoading isReceived />
+			<MessageLoading />
+			<MessageLoading isReceived />
+			<MessageLoading />
+			<MessageLoading />
+			<MessageLoading isReceived />
+			<MessageLoading isReceived />
+			<MessageLoading />
+			<MessageLoading />
+			<MessageLoading isReceived />
+			<MessageLoading />
+		</>
+	)
 }
 
 export default ChatLoading
