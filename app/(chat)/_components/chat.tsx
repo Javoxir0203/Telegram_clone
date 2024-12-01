@@ -8,9 +8,11 @@ const Chat = () => {
 			{/* Loading */}
 
 			{/* <ChatLoading /> */}
+			
 			{/* Message */}
 
 			{/* <MessageCard isReceived /> */}
+
 			{/* Message Input */}
 		</div>
 	)

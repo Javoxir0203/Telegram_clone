@@ -22,6 +22,11 @@ const Home = () => {
 		defaultValues: { email: '' },
 	})
 	//
+		const messageForm = useForm<z.infer<typeof emailSchema>>({
+			resolver: zodResolver(emailSchema),
+			defaultValues: { email: '' },
+		})
+	//
 	useEffect(() => {
 		router.replace('/')
 	}, [])
