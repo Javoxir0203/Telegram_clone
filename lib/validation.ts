@@ -13,4 +13,5 @@ export const otpSchema = z
 
 export const messageSchema = z.object({
 	text: z.string().min(1, { message: 'Message cannot be empty.' }),
+	image: z.string().optional(),
 })

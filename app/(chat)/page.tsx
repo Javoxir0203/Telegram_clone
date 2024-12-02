@@ -8,7 +8,7 @@ import AddContact from './_components/add.contact'
 import { useCurrentContact } from '@/hooks/use-current'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { emailSchema } from '@/lib/validation'
+import { emailSchema, messageSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import TopChat from './_components/top-chat'
 import Chat from './_components/chat'
@@ -22,10 +22,10 @@ const Home = () => {
 		defaultValues: { email: '' },
 	})
 	//
-		const messageForm = useForm<z.infer<typeof emailSchema>>({
-			resolver: zodResolver(emailSchema),
-			defaultValues: { email: '' },
-		})
+	const messageForm = useForm<z.infer<typeof messageSchema>>({
+		resolver: zodResolver(messageSchema),
+		defaultValues: { text: '', image: '' },
+	})
 	//
 	useEffect(() => {
 		router.replace('/')
@@ -33,6 +33,11 @@ const Home = () => {
 
 	const onCreateContact = (values: z.infer<typeof emailSchema>) => {
 		// API call to create contact
+		console.log(values)
+	}
+	//
+	const onSendMessage = (values: z.infer<typeof messageSchema>) => {
+		// API call to send message
 		console.log(values)
 	}
 	return (
@@ -52,12 +57,14 @@ const Home = () => {
 				{/* Add contact */}
 				{!currentContact?._id && <AddContact contactForm={contactForm} onCreateContact={onCreateContact} />}
 				{/* chat */}
-				{currentContact?._id && <div className='w-full relative'>
-					{/* Top chat */}
-					<TopChat/>
-					{/* chat message */}
-					<Chat/>
-					</div>}
+				{currentContact?._id && (
+					<div className='w-full relative'>
+						{/* Top chat */}
+						<TopChat />
+						{/* chat message */}
+						<Chat messageForm={messageForm} onSendMessage={onSendMessage} />
+					</div>
+				)}
 			</div>
 		</>
 	)
