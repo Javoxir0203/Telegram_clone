@@ -62,7 +62,7 @@ const Home = () => {
 						{/* Top chat */}
 						<TopChat />
 						{/* chat message */}
-						<Chat messageForm={messageForm} onSendMessage={onSendMessage} />
+						<Chat messageForm={messageForm} onSendMessage={onSendMessage}  />
 					</div>
 				)}
 			</div>
@@ -78,5 +78,7 @@ export const contacts = [
 	{ email: 'muhammadali@gamil.com', _id: '5', avatar: '' },
 	{ email: 'muhammadyusuf@gamil.com', _id: '6', avatar: '' },
 ]
+
+
 
 export default Home
