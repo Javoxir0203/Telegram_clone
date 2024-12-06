@@ -12,6 +12,12 @@ import { emailSchema, messageSchema } from '@/lib/validation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import TopChat from './_components/top-chat'
 import Chat from './_components/chat'
+import javoxir from '@/public/javoxir.jpg'
+import begzod from '@/public/begzod.jpg'
+import nurquvvat from '@/public/nurquvvat.jpg'
+import abdumajid from '@/public/abdumajid.jpg'
+import muhammadali from '@/public/muhammadali.jpg'
+import muhammadyusuf from '@/public/muhammadyusuf.jpg'
 
 const Home = () => {
 	const { currentContact } = useCurrentContact()
@@ -62,23 +68,22 @@ const Home = () => {
 						{/* Top chat */}
 						<TopChat />
 						{/* chat message */}
-						<Chat messageForm={messageForm} onSendMessage={onSendMessage}  />
+						<Chat messageForm={messageForm} onSendMessage={onSendMessage} />
 					</div>
 				)}
+				
 			</div>
 		</>
 	)
 }
 
 export const contacts = [
-	{ email: 'javoxir@gmail.com', _id: '1', avatar: '' },
-	{ email: 'begzod@gmail.com', _id: '2', avatar: '' },
-	{ email: 'nurquvvot@gamil.com', _id: '3', avatar: '' },
-	{ email: 'abdumajid@gmail.com', _id: '4', avatar: '' },
-	{ email: 'muhammadali@gamil.com', _id: '5', avatar: '' },
-	{ email: 'muhammadyusuf@gamil.com', _id: '6', avatar: '' },
+	{ bio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis consequatur suscipit, mollitia amet excepturi odit ut fugiat eius, necessitatibus numquam itaque molestias repellat animi ipsa ab sapiente dolor autem praesentium.', firstName: 'Javoxir', lastName: 'Eshquvvatov', email: 'javoxir@gmail.com', _id: '1', avatar: javoxir },
+	{ bio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis consequatur suscipit, mollitia amet excepturi odit ut fugiat eius, necessitatibus numquam itaque molestias repellat animi ipsa ab sapiente dolor autem praesentium.', firstName: 'Begzod', lastName: 'Eshquvvatov', email: 'begzod@gmail.com', _id: '2', avatar: begzod },
+	{ bio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis consequatur suscipit, mollitia amet excepturi odit ut fugiat eius, necessitatibus numquam itaque molestias repellat animi ipsa ab sapiente dolor autem praesentium.', firstName: 'Nurquvvat', lastName: 'Eshquvvatov', email: 'nurquvvot@gamil.com', _id: '3', avatar: nurquvvat },
+	{ bio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis consequatur suscipit, mollitia amet excepturi odit ut fugiat eius, necessitatibus numquam itaque molestias repellat animi ipsa ab sapiente dolor autem praesentium.', firstName: 'Abdumajid', lastName: 'Eshquvvatov', email: 'abdumajid@gmail.com', _id: '4', avatar: abdumajid },
+	{ bio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis consequatur suscipit, mollitia amet excepturi odit ut fugiat eius, necessitatibus numquam itaque molestias repellat animi ipsa ab sapiente dolor autem praesentium.', firstName: 'MuhammadAli', lastName: 'Ravshanov', email: 'muhammadali@gamil.com', _id: '5', avatar: muhammadali },
+	{ bio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis consequatur suscipit, mollitia amet excepturi odit ut fugiat eius, necessitatibus numquam itaque molestias repellat animi ipsa ab sapiente dolor autem praesentium.', firstName: 'MuhammadYusuf', lastName: 'Ravshanov', email: 'muhammadyusuf@gamil.com', _id: '6', avatar: muhammadyusuf },
 ]
-
-
 
 export default Home

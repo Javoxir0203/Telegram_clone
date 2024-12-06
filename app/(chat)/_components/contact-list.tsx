@@ -1,6 +1,6 @@
 'use client'
 import { IUser } from '@/types'
-import { FC, Fragment } from 'react'
+import { FC } from 'react'
 import Settings from './settings'
 import { Input } from '@/components/ui/input'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -20,14 +20,16 @@ const ContactList: FC<Props> = ({ contacts }) => {
 			setCurrentContact(contact)
 			router.push(`/?chat=${contact._id}`)
 		}
+
 		return (
 			<div className={cn('flex justify-between items-center cursor-pointer hover:bg-secondary/50 p-2', currentContact?._id === contact._id && 'bg-secondary/50')} onClick={onChat}>
 				<div className='flex items-center gap-2'>
 					<div className='relative'>
 						<Avatar className='z-40'>
-							<AvatarImage src={contact.avatar} alt={contact.email} className='object-cover' />
+							<AvatarImage src={contact?.avatar?.src} alt={contact.email} className='object-cover' />
 							<AvatarFallback className='uppercase'>{contact.email[0]}</AvatarFallback>
 						</Avatar>
+
 						<div className=' size-3 bg-green-500 absolute rounded-full bottom-0 right-0 !z-50' />
 					</div>
 					<div>

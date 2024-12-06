@@ -8,7 +8,6 @@ import { FC } from 'react'
 import { Button } from '@/components/ui/button'
 import { Paperclip, Send, Smile } from 'lucide-react'
 import { Input } from '@/components/ui/input'
-import MessageCard from '@/components/cards/message.card'
 
 interface Props {
 	onSendMessage: (values: z.infer<typeof messageSchema>) => void
@@ -23,7 +22,14 @@ const Chat: FC<Props> = ({ onSendMessage, messageForm }) => {
 			{/* <ChatLoading /> */}
 
 			{/* Message */}
-			<MessageCard isReceived />
+			{/* <MessageCard isReceived /> */}
+
+			{/* Start conversation */}
+			{/* <div className='w-full h-[88vh] flex items-center justify-center'>
+				<div className='text-[100px] cursor-pointer' onClick={() => onSendMessage({ text: '✋' })}>
+					✋
+				</div>
+			</div> */}
 
 			{/* Message Input */}
 			<Form {...messageForm}>
